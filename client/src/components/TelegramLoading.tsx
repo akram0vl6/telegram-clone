@@ -1,12 +1,19 @@
-"use client"
-import Lottie from 'lottie-react'
-import React from 'react'
-import loader from "../assets/Telegram.json";
+"use client";
+
+import Lottie from 'lottie-react';
+import React, { useEffect, useState } from 'react';
+import loader from '../assets/Telegram.json';
 
 function TelegramLoading() {
-  return (
-      <Lottie animationData={loader} loop={true} />
-  )
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null; // или return <div>Загрузка...</div>
+
+  return <Lottie animationData={loader} loop={true} />;
 }
 
-export default TelegramLoading
+export default TelegramLoading;

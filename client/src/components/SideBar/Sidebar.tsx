@@ -1,6 +1,6 @@
 "use client"
 import { fetchUser } from '@/lib/fetchers';
-import { useUser } from '@/store/userStore';
+import { useAllUsers, useUser } from '@/store/userStore';
 import React, { useEffect } from 'react'
 import { useCookies } from 'react-cookie'
 import { shallow } from 'zustand/shallow';
@@ -9,6 +9,8 @@ import ChatList from './ChatList';
 
 function Sidebar() {
     const [cookie, setCookie] = useCookies(["user"]);
+
+    
     const { myUser, setUser } = useUser((state) => ({ myUser: state.myUser, setUser: state.setUser }), shallow);
     useEffect(() => {
         fetchUser(cookie, setUser)

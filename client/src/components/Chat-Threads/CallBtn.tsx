@@ -1,4 +1,5 @@
 "use client"
+import { socket } from '@/lib/socket';
 import { useSelectedUser, useUser } from '@/store/userStore';
 import { PhoneIcon } from '@/utils/icons'
 import { useRouter } from 'next/navigation'
@@ -8,7 +9,6 @@ import { io } from "socket.io-client";
 
 function CallBtn() {
   const router = useRouter();
-  const socket = io("http://localhost:4000");
   const [cookie] = useCookies(["user"]);
   const selectedUser = useSelectedUser((state) => state.selectedUser);
   const myUser = useUser((state) => state.myUser);

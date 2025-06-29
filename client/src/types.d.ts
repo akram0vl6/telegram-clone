@@ -3,7 +3,13 @@ export interface userProps {
   imageId: string | undefined;
   name: string | undefined;
   email: string | undefined;
-  messages: any[];
+  messages: messagesProps[];
+  connections: any[]
+}
+
+export interface messagesProps {
+  messages: string,
+  setMessages: string
 }
 
 export interface ChatListProps {

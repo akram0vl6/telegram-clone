@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 
 function Avatar({avatarId,setAvatarId}:AvatarProps) {
+  const img = localStorage.getItem("avatarId");
   return (
     <div
       onClick={() => setAvatarId((Math.random() * 20).toFixed())}

@@ -7,6 +7,8 @@ import MessageInp from './MessageInp';
 
 function Messages() {
     const selectedUser = useSelectedUser((state) => state.selectedUser);
+    console.log(selectedUser);
+    
   return (
       <div className='bg-image messages w-full min-h-screen z-0 hidden md:w-1/2 lg:w-2/3 md:flex md:flex-col flex-col'>
           {/* TOPBAR */}
